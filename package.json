@@ -1,0 +1,49 @@
+{
+  "name": "oxycode-skills",
+  "version": "1.0.0",
+  "description": "Vercel-quality UI skills for AI coding agents. No more AI slop.",
+  "main": "index.js",
+  "files": [
+    "skills/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "validate": "bash skills/design-md/scripts/validate.sh"
+  },
+  "keywords": [
+    "ai",
+    "skills",
+    "ui",
+    "design",
+    "claude",
+    "codex",
+    "opencode",
+    "cursor",
+    "gemini",
+    "react",
+    "nextjs",
+    "tailwind",
+    "vercel",
+    "stitch",
+    "design-md",
+    "ui-builder",
+    "anti-slop",
+    "design-audit",
+    "component-architect",
+    "component-library",
+    "design-system",
+    "atomic-design"
+  ],
+  "author": "oxycode-ai",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oxycodeai/OXYCODE-SKILLS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oxycodeai/OXYCODE-SKILLS/issues"
+  },
+  "homepage": "https://github.com/oxycodeai/OXYCODE-SKILLS#readme"
+}

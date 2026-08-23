@@ -1,0 +1,24 @@
+{
+  "name": "oxycode-skills",
+  "version": "1.0.0",
+  "description": "Vercel-quality UI skills for AI coding agents",
+  "author": "oxycode-ai",
+  "license": "MIT",
+  "skills": [
+    "ui-builder",
+    "design-md",
+    "anti-slop",
+    "design-audit",
+    "component-architect"
+  ],
+  "repository": "https://github.com/oxycodeai/OXYCODE-SKILLS",
+  "keywords": [
+    "ui",
+    "design",
+    "react",
+    "nextjs",
+    "tailwind",
+    "vercel",
+    "stitch"
+  ]
+}

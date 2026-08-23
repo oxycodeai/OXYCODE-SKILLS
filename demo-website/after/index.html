@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>After oxycode-skills - Vercel Quality</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body { background: #09090b; color: #fafafa; line-height: 1.5; }
+    a { color: inherit; text-decoration: none; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(9,9,11,0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; letter-spacing: -0.02em; }
+    .logo-icon { width: 28px; height: 28px; background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+    .logo-icon svg { width: 16px; height: 16px; color: #09090b; }
+    nav { display: flex; align-items: center; gap: 32px; }
+    nav a { font-size: 14px; color: #a1a1aa; transition: color 0.15s; }
+    nav a:hover { color: #fafafa; }
+    .header-actions { display: flex; align-items: center; gap: 16px; }
+    .btn-ghost { font-size: 14px; color: #a1a1aa; background: none; border: none; cursor: pointer; padding: 8px 12px; border-radius: 6px; transition: color 0.15s; }
+    .btn-ghost:hover { color: #fafafa; }
+    .btn-primary { font-size: 14px; font-weight: 500; color: #09090b; background: #fafafa; border: none; cursor: pointer; padding: 8px 16px; border-radius: 6px; transition: background 0.15s; }
+    .btn-primary:hover { background: #e4e4e7; }
+
+    /* Hero */
+    .hero { padding: 160px 0 120px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(ellipse, rgba(255,255,255,0.06) 0%, transparent 70%); pointer-events: none; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03); font-size: 13px; color: #a1a1aa; margin-bottom: 32px; }
+    .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: #22c55e; }
+    .hero h1 { font-size: clamp(48px, 7vw, 80px); font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; margin-bottom: 24px; background: linear-gradient(180deg, #fafafa 0%, #71717a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero p { font-size: 18px; color: #71717a; max-width: 560px; margin: 0 auto 40px; line-height: 1.6; }
+    .hero-actions { display: flex; align-items: center; justify-content: center; gap: 12px; }
+    .btn-lg { font-size: 15px; font-weight: 500; padding: 12px 24px; border-radius: 8px; cursor: pointer; border: none; transition: all 0.15s; }
+    .btn-lg-primary { background: #fafafa; color: #09090b; }
+    .btn-lg-primary:hover { background: #e4e4e7; }
+    .btn-lg-secondary { background: rgba(255,255,255,0.06); color: #fafafa; border: 1px solid rgba(255,255,255,0.1); }
+    .btn-lg-secondary:hover { background: rgba(255,255,255,0.1); }
+    .hero-code { margin-top: 64px; display: inline-flex; align-items: center; gap: 12px; padding: 12px 20px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 14px; color: #a1a1aa; }
+    .hero-code span { color: #52525b; }
+
+    /* Features */
+    .features { padding: 120px 0; }
+    .section-label { font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: #52525b; margin-bottom: 12px; }
+    .section-title { font-size: clamp(32px, 4vw, 44px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 16px; }
+    .section-desc { font-size: 16px; color: #71717a; max-width: 480px; line-height: 1.6; }
+    .section-header { margin-bottom: 64px; }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; overflow: hidden; }
+    .feature-card { background: #09090b; padding: 40px 32px; transition: background 0.2s; }
+    .feature-card:hover { background: rgba(255,255,255,0.02); }
+    .feature-icon { width: 40px; height: 40px; border-radius: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .feature-icon svg { width: 20px; height: 20px; color: #a1a1aa; }
+    .feature-card h3 { font-size: 16px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px; }
+    .feature-card p { font-size: 14px; color: #71717a; line-height: 1.6; }
+
+    /* Pricing */
+    .pricing { padding: 120px 0; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .pricing-card { border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 32px; display: flex; flex-direction: column; transition: border-color 0.2s; }
+    .pricing-card:hover { border-color: rgba(255,255,255,0.15); }
+    .pricing-card.featured { border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.02); position: relative; }
+    .pricing-card.featured::before { content: 'Most Popular'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); padding: 4px 12px; background: #fafafa; color: #09090b; font-size: 12px; font-weight: 600; border-radius: 9999px; }
+    .pricing-tier { font-size: 14px; font-weight: 500; color: #a1a1aa; margin-bottom: 8px; }
+    .pricing-price { font-size: 48px; font-weight: 700; letter-spacing: -0.04em; line-height: 1; margin-bottom: 4px; }
+    .pricing-price span { font-size: 16px; font-weight: 400; color: #52525b; }
+    .pricing-desc { font-size: 14px; color: #52525b; margin-bottom: 32px; }
+    .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; flex: 1; }
+    .pricing-features li { font-size: 14px; color: #a1a1aa; display: flex; align-items: center; gap: 10px; }
+    .pricing-features li::before { content: ''; width: 16px; height: 16px; border-radius: 50%; background: rgba(34,197,94,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2322c55e' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; }
+    .pricing-btn { width: 100%; padding: 10px 0; border-radius: 8px; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.15s; text-align: center; }
+    .pricing-btn-outline { background: transparent; color: #fafafa; border: 1px solid rgba(255,255,255,0.12); }
+    .pricing-btn-outline:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.2); }
+    .pricing-btn-filled { background: #fafafa; color: #09090b; border: 1px solid transparent; }
+    .pricing-btn-filled:hover { background: #e4e4e7; }
+
+    /* Footer */
+    footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 64px 0 48px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-brand p { font-size: 14px; color: #52525b; margin-top: 12px; max-width: 280px; line-height: 1.6; }
+    .footer-col h4 { font-size: 13px; font-weight: 500; color: #fafafa; margin-bottom: 16px; }
+    .footer-col a { display: block; font-size: 14px; color: #52525b; padding: 4px 0; transition: color 0.15s; }
+    .footer-col a:hover { color: #a1a1aa; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-bottom p { font-size: 13px; color: #3f3f46; }
+    .footer-socials { display: flex; gap: 16px; }
+    .footer-socials a { color: #52525b; transition: color 0.15s; }
+    .footer-socials a:hover { color: #a1a1aa; }
+    .footer-socials svg { width: 18px; height: 18px; }
+
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .features-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .hero-actions { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        oxycode-skills
+      </a>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#">Docs</a>
+        <a href="#">Blog</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn-ghost">Sign In</button>
+        <button class="btn-primary">Get Started</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Now available
+      </div>
+      <h1>Build faster with<br>production-ready skills</h1>
+      <p>A curated collection of battle-tested patterns, components, and workflows. Ship with confidence.</p>
+      <div class="hero-actions">
+        <button class="btn-lg btn-lg-primary">Start Building</button>
+        <button class="btn-lg btn-lg-secondary">View Documentation</button>
+      </div>
+      <div class="hero-code">
+        <span>$</span> npm install oxycode-skills
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Features</p>
+        <h2 class="section-title">Everything you need to ship</h2>
+        <p class="section-desc">From design systems to deployment patterns, each skill is crafted for real-world production use.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          </div>
+          <h3>Design Systems</h3>
+          <p>Pre-built component libraries with consistent tokens, typography, and spacing scales. Drop in and customize.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Architecture Patterns</h3>
+          <p>Proven structural patterns for frontend, backend, and full-stack applications. Scale with confidence.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3>Performance First</h3>
+          <p>Optimized patterns that ship fast. Core Web Vitals, bundle analysis, and rendering strategies built in.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Pricing</p>
+        <h2 class="section-title">Simple, transparent pricing</h2>
+        <p class="section-desc">Choose the plan that fits your team. Upgrade or downgrade at any time.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <p class="pricing-tier">Starter</p>
+          <p class="pricing-price">Free</p>
+          <p class="pricing-desc">For personal projects and experiments.</p>
+          <ul class="pricing-features">
+            <li>10 skills included</li>
+            <li>Community support</li>
+            <li>Basic templates</li>
+            <li>Single developer</li>
+          </ul>
+          <button class="pricing-btn pricing-btn-outline">Get Started</button>
+        </div>
+        <div class="pricing-card featured">
+          <p class="pricing-tier">Pro</p>
+          <p class="pricing-price">$29 <span>/ month</span></p>
+          <p class="pricing-desc">For professional developers and small teams.</p>
+          <ul class="pricing-features">
+            <li>All 200+ skills</li>
+            <li>Priority support</li>
+            <li>Advanced templates</li>
+            <li>Up to 5 team members</li>
+            <li>Monthly updates</li>
+          </ul>
+          <button class="pricing-btn pricing-btn-filled">Start Free Trial</button>
+        </div>
+        <div class="pricing-card">
+          <p class="pricing-tier">Enterprise</p>
+          <p class="pricing-price">Custom</p>
+          <p class="pricing-desc">For organizations that need scale and support.</p>
+          <ul class="pricing-features">
+            <li>Everything in Pro</li>
+            <li>Dedicated support</li>
+            <li>Custom skill development</li>
+            <li>Unlimited team members</li>
+            <li>SLA guarantee</li>
+          </ul>
+          <button class="pricing-btn pricing-btn-outline">Contact Sales</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <div class="logo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            oxycode-skills
+          </a>
+          <p>Production-ready skills and patterns for modern development teams.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#">Features</a>
+          <a href="#">Pricing</a>
+          <a href="#">Changelog</a>
+          <a href="#">Roadmap</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="#">Documentation</a>
+          <a href="#">Blog</a>
+          <a href="#">Guides</a>
+          <a href="#">Community</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About</a>
+          <a href="#">Careers</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 oxycode-skills. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
