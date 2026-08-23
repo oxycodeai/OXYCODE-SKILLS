@@ -40,10 +40,10 @@ With oxycode-skills, AI generates this:
 ## Demo Video
 
 ### Before (AI Slop)
-[![Watch Before Video](https://img.shields.io/badge/▶_Watch_Before_Video-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://t.me/OXYCODEPREVIEWGIT/2)
+[![Watch Before Video](https://img.shields.io/badge/▶_Watch_Before_Video-FF0000?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/OXYCODE_SKILLS_PREVIEW/2)
 
 ### After (oxycode-skills)
-[![Watch After Video](https://img.shields.io/badge/▶_Watch_After_Video-00AA00?style=for-the-badge&logo=youtube&logoColor=white)](https://t.me/OXYCODEPREVIEWGIT/3)
+[![Watch After Video](https://img.shields.io/badge/▶_Watch_After_Video-00AA00?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/OXYCODE_SKILLS_PREVIEW/3)
 
 ## Skills Included
 
@@ -142,9 +142,10 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ## Support
 
-- 📧 Email: support@oxycode.ai
-- 🐦 Twitter: @oxycode_ai
-- 💬 Discord: [Join our server](https://discord.gg/oxycode)
+- 📧 Email: oxycodeai@gmail.com
+- 🐦 X (Twitter): @oxycode_ai
+- ✈️ Telegram Channel: [Join](https://t.me/OXYCODEAI)
+- 💬 Telegram Group: [Join](https://t.me/+YXwFGkYYjdJlNjE1)
 
 ---
 
