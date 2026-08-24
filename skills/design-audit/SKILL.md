@@ -1,3 +1,8 @@
+---
+name: design-audit
+description: Score UI quality 0-100 with 10-dimension rubric
+---
+
 # design-audit
 
 ## Description

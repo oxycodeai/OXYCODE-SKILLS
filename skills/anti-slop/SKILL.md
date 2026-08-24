@@ -1,3 +1,8 @@
+---
+name: anti-slop
+description: Block generic AI patterns like purple gradients and centered cards
+---
+
 # anti-slop
 
 ## Description

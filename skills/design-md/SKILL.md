@@ -1,3 +1,8 @@
+---
+name: design-md
+description: Generate and validate DESIGN.md files following Google's standard
+---
+
 # design-md
 
 ## Description

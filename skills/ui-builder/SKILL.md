@@ -1,3 +1,8 @@
+---
+name: ui-builder
+description: Build production-quality UI with React, Tailwind, and Next.js
+---
+
 # ui-builder
 
 ## Description

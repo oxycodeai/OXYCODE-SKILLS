@@ -1,3 +1,8 @@
+---
+name: component-architect
+description: Design scalable component architectures with atomic design
+---
+
 # component-architect
 
 ## Description
