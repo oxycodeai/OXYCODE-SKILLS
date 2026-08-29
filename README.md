@@ -43,13 +43,13 @@
 
 ## ⚡ Quick Install
 
-### Step 1: Run This Command
+### Method 1: Interactive (Recommended)
 ```bash
 npx skills add oxycodeai/OXYCODE-SKILLS
 ```
-> CLI khud puchega kaunsa agent aur kaunsi skills chahiye — interactive hai.
+> CLI interactive hai — agent aur skills select karo.
 
-### Step 2: Ya Seedha Command Se Install Karo
+### Method 2: Direct Command
 
 | Agent | Command |
 |-------|---------|
@@ -58,7 +58,10 @@ npx skills add oxycodeai/OXYCODE-SKILLS
 | Codex | `npx skills add oxycodeai/OXYCODE-SKILLS --agent codex` |
 | Cursor | `npx skills add oxycodeai/OXYCODE-SKILLS --agent cursor` |
 | Antigravity | `npx skills add oxycodeai/OXYCODE-SKILLS --agent antigravity` |
+| **Universal (koi bhi agent)** | `npx skills add oxycodeai/OXYCODE-SKILLS --agent universal` |
 | Sab agents | `npx skills add oxycodeai/OXYCODE-SKILLS --all` |
+
+> **Tumhara agent list mein nahi hai?** → `--agent universal` use karo — yeh sab agents pe kaam karta hai.
 
 ---
 
