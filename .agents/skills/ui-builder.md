@@ -1,6 +1,6 @@
 # ui-builder
 
-Generate production-ready UI components and pages from text prompts.
+Build production-quality UI with React, Tailwind, and Next.js.
 
 ## Usage
 
@@ -18,35 +18,14 @@ This skill teaches AI coding agents to generate Vercel-quality React/TypeScript 
 - Tailwind CSS styling
 - Responsive design
 - Accessibility attributes
-- Design token support
-- No AI slop patterns
+- Design token integration
+- Anti-slop pattern enforcement
 
-## Examples
+## What It Prevents
 
-### Stats Card
-```bash
-/ui-builder "Create a stats card with title, value, and percentage change"
-```
-
-### Landing Page
-```bash
-/ui-builder "Build a SaaS landing page with hero, features, pricing, and testimonials"
-```
-
-### Dashboard
-```bash
-/ui-builder "Create an analytics dashboard with sidebar navigation, stats cards, and a data table"
-```
-
-## Anti-Patterns to Avoid
-
-- No purple/blue gradients
-- No centered everything
-- No rainbow colors
-- No oversized border radius
-
-## Resources
-
-- [Vercel Design System](https://vercel.com/design)
-- [shadcn/ui](https://ui.shadcn.com/)
-- [Tailwind CSS](https://tailwindcss.com)
+- Purple gradients and cyan accents
+- Glassmorphism and backdrop-blur
+- Glow effects and colored shadows
+- Centered everything layouts
+- Framer Motion page load animations
+- Doodle/pattern backgrounds

@@ -4,20 +4,20 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/license-MIT-green" alt="License">
-  <img src="https://img.shields.io/badge/version-1.0.0-blue" alt="Version">
-  <img src="https://img.shields.io/badge/platform-Claude%20%7C%20Codex%20%7C%20OpenCode%20%7C%20Cursor%20%7C%20Gemini-purple" alt="Platforms">
+  <img src="https://img.shields.io/badge/version-1.1.0-blue" alt="Version">
+  <img src="https://img.shields.io/badge/agents-5-purple" alt="Agents">
 </p>
 
 ## What is this?
 
-**oxycode-skills** teaches AI coding agents to produce Vercel-quality UI instead of generic "AI slop" — the purple gradients, Inter font, and centered cards that every developer hates.
+**oxycode-skills** teaches AI coding agents to produce Vercel-quality UI instead of generic "AI slop" — the purple gradients, backdrop-blur, and centered cards that every developer hates.
 
 ### The Problem
 
 AI-generated UI usually looks like this:
 ```tsx
 // ❌ AI Slop
-<div className="bg-gradient-to-br from-purple-500 to-blue-500 p-8 rounded-2xl">
+<div className="bg-gradient-to-br from-purple-500 to-blue-500 p-8 rounded-2xl backdrop-blur-md">
   <h1 className="text-3xl font-bold text-white text-center">Welcome</h1>
 </div>
 ```
@@ -27,13 +27,11 @@ AI-generated UI usually looks like this:
 With oxycode-skills, AI generates this:
 ```tsx
 // ✅ Vercel-Quality UI
-<section className="bg-zinc-950 border border-zinc-800 rounded-xl p-6">
-  <h2 className="text-xl font-semibold text-zinc-100 tracking-tight">
-    Welcome
-  </h2>
-  <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-    Description here
-  </p>
+<section className="py-24">
+  <div className="max-w-6xl mx-auto px-6">
+    <h1 className="text-5xl font-bold tracking-tight">Welcome</h1>
+    <p className="text-xl text-gray-400 mt-4 max-w-2xl">Description here</p>
+  </div>
 </section>
 ```
 
@@ -47,79 +45,101 @@ With oxycode-skills, AI generates this:
 
 ## Skills Included
 
-| Skill | Description | Status |
-|-------|-------------|--------|
-| `ui-builder` | Full UI workflow: brief → tokens → components → polish | ✅ Ready |
-| `design-md` | Generate & validate DESIGN.md files (Google's standard) | ✅ Ready |
-| `anti-slop` | Block generic AI patterns | ✅ Ready |
-| `design-audit` | Score UI quality 0-100 | ✅ Ready |
-| `component-architect` | Atomic design patterns | ✅ Ready |
+| Skill | Description |
+|-------|-------------|
+| `ui-builder` | Full UI workflow: brief → tokens → components → polish |
+| `design-md` | Generate & validate DESIGN.md files (Google's standard) |
+| `anti-slop` | Block generic AI patterns (gradients, glassmorphism, glow) |
+| `design-audit` | Score UI quality 0-100 with 10-dimension rubric |
+| `component-architect` | Atomic design patterns & compound components |
+| `website-design` | Vercel-quality website patterns & anti-slop rules |
 
 ## Installation
 
-### For Claude Code
+### Interactive Install (Recommended)
+
 ```bash
-/install-skill oxycode-skills/ui-builder
+npx skills add oxycodeai/OXYCODE-SKILLS
 ```
 
-### For OpenCode / Codex / Cursor / Gemini
+The CLI will prompt you to:
+1. **Select your agent** — Claude Code, Codex, OpenCode, Antigravity, Cursor, or Universal
+2. **Select skills** — Choose which skills to install
+
+### Quick Install (All Skills, All Agents)
+
 ```bash
-npx skills add oxycode-skills --skill ui-builder
+npx skills add oxycodeai/OXYCODE-SKILLS --all
 ```
 
-### All Skills
+### Install for Specific Agent
+
 ```bash
-npx skills add oxycode-skills --all
+# Claude Code
+npx skills add oxycodeai/OXYCODE-SKILLS --agent claude-code
+
+# Codex
+npx skills add oxycodeai/OXYCODE-SKILLS --agent codex
+
+# OpenCode
+npx skills add oxycodeai/OXYCODE-SKILLS --agent opencode
+
+# Antigravity
+npx skills add oxycodeai/OXYCODE-SKILLS --agent antigravity
+
+# Universal (works on all agents)
+npx skills add oxycodeai/OXYCODE-SKILLS --agent universal
 ```
+
+### Install Specific Skills
+
+```bash
+# Just ui-builder
+npx skills add oxycodeai/OXYCODE-SKILLS --skill ui-builder
+
+# Multiple skills
+npx skills add oxycodeai/OXYCODE-SKILLS --skill ui-builder --skill anti-slop
+```
+
+## Supported Agents
+
+| Agent | Status | Install Command |
+|-------|--------|----------------|
+| Claude Code | ✅ | `--agent claude-code` |
+| Codex | ✅ | `--agent codex` |
+| OpenCode | ✅ | `--agent opencode` |
+| Antigravity | ✅ | `--agent antigravity` |
+| Cursor | ✅ | `--agent cursor` |
+| Universal | ✅ | `--agent universal` |
 
 ## Quick Start
 
-### 1. Create a DESIGN.md
-```markdown
-# My App Design System
-
-## Colors
-- Primary: #18181b (zinc-900)
-- Secondary: #27272a (zinc-800)
-- Accent: #3b82f6 (blue-500)
-
-## Typography
-- Font: Inter
-- Headings: 600 weight, tracking-tight
-- Body: 400 weight, leading-relaxed
-
-## Spacing
-- XS: 4px
-- SM: 8px
-- MD: 16px
-- LG: 24px
-- XL: 32px
+### 1. Install skills
+```bash
+npx skills add oxycodeai/OXYCODE-SKILLS --all
 ```
 
-### 2. Use the ui-builder skill
+### 2. Use in your AI agent
 ```bash
 # Generate a dashboard
-/ui-builder "Create a analytics dashboard with sidebar navigation"
+/ui-builder "Create an analytics dashboard with sidebar navigation"
 
 # Generate a landing page
 /ui-builder "Build a SaaS landing page with pricing table"
+
+# Audit existing UI
+/design-audit "Score this landing page for design quality"
+
+# Fix AI slop
+/anti-slop "Review this component for AI slop patterns"
 ```
 
 ### 3. Get production-ready code
-The skill will output:
 - React/TypeScript components
 - Tailwind CSS styling
 - Responsive design
-- Dark mode support
 - Accessibility attributes
-
-## Platforms Supported
-
-- ✅ Claude Code
-- ✅ OpenCode
-- ✅ Codex
-- ✅ Cursor
-- ✅ Gemini CLI
+- Design token integration
 
 ## What Makes This Different?
 
@@ -130,7 +150,8 @@ The skill will output:
 | React/TypeScript output | ❌ | ✅ |
 | Next.js integration | ❌ | ✅ |
 | Quality scoring | ❌ | ✅ |
-| Cross-platform | ❌ | ✅ |
+| 5+ agents supported | ❌ | ✅ |
+| Interactive install | ❌ | ✅ |
 
 ## Contributing
 
