@@ -41,39 +41,24 @@
 
 ---
 
-## ⚡ Quick Install — Copy Your Command
+## ⚡ Quick Install
 
-**Apna agent select karo aur command copy karo:**
-
-### Claude Code
+### Step 1: Run This Command
 ```bash
-npx skills add oxycodeai/OXYCODE-SKILLS --agent claude-code
+npx skills add oxycodeai/OXYCODE-SKILLS
 ```
+> CLI khud puchega kaunsa agent aur kaunsi skills chahiye — interactive hai.
 
-### OpenCode
-```bash
-npx skills add oxycodeai/OXYCODE-SKILLS --agent opencode
-```
+### Step 2: Ya Seedha Command Se Install Karo
 
-### Codex
-```bash
-npx skills add oxycodeai/OXYCODE-SKILLS --agent codex
-```
-
-### Cursor
-```bash
-npx skills add oxycodeai/OXYCODE-SKILLS --agent cursor
-```
-
-### Antigravity
-```bash
-npx skills add oxycodeai/OXYCODE-SKILLS --agent antigravity
-```
-
-### Sab Agents Ke Liye
-```bash
-npx skills add oxycodeai/OXYCODE-SKILLS --all
-```
+| Agent | Command |
+|-------|---------|
+| Claude Code | `npx skills add oxycodeai/OXYCODE-SKILLS --agent claude-code` |
+| OpenCode | `npx skills add oxycodeai/OXYCODE-SKILLS --agent opencode` |
+| Codex | `npx skills add oxycodeai/OXYCODE-SKILLS --agent codex` |
+| Cursor | `npx skills add oxycodeai/OXYCODE-SKILLS --agent cursor` |
+| Antigravity | `npx skills add oxycodeai/OXYCODE-SKILLS --agent antigravity` |
+| Sab agents | `npx skills add oxycodeai/OXYCODE-SKILLS --all` |
 
 ---
 
