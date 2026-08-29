@@ -43,13 +43,31 @@
 
 ## ⚡ Quick Install
 
-### Method 1: Interactive (Recommended)
+### Step 1: Command Run Karo
 ```bash
 npx skills add oxycodeai/OXYCODE-SKILLS
 ```
-> CLI interactive hai — agent aur skills select karo.
 
-### Method 2: Direct Command
+### Step 2: CLI Puchega — Yeh Select Karo
+
+```
+? Which agents do you want to install to?
+
+  ── Universal (.agents/skills) ── always included ──
+    → Ye sab agents ke liye kaam karta hai
+    → Agar tumhara agent "Additional agents" mein nahi hai, toh ye select karo
+
+  ── Additional agents ──
+    → Agar tumhara agent yahan hai, toh ye select karo
+```
+
+**Flow:**
+```
+Tumhara agent "Additional agents" mein hai?  →  Haan  →  Wo select karo
+                                              →  Nahi  →  Universal select karo
+```
+
+### Step 3: Ya Direct Command Se Install Karo
 
 | Agent | Command |
 |-------|---------|
@@ -61,7 +79,7 @@ npx skills add oxycodeai/OXYCODE-SKILLS
 | **Universal (koi bhi agent)** | `npx skills add oxycodeai/OXYCODE-SKILLS --agent universal` |
 | Sab agents | `npx skills add oxycodeai/OXYCODE-SKILLS --all` |
 
-> **Tumhara agent list mein nahi hai?** → `--agent universal` use karo — yeh sab agents pe kaam karta hai.
+> **Note:** `skills` CLI third-party tool hai (Vercel ka). Uska UI change karna possible nahi hai. Hum sirf README clear bana sakte hain.
 
 ---
 
